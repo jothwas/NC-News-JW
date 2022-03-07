@@ -33,8 +33,9 @@
 
 .plus {
   transition: all 0.2s ease-in-out;
-  margin-right: 0.15em;
+  margin-right: 0.1em;
 }
-.plus:hover {
+
+.article-query-links:hover .plus {
   color: rgb(252, 47, 0);
 }
