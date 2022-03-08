@@ -11,8 +11,8 @@ const ArticlesList = () => {
     setIsLoading(true);
     api.fetchAllArticles().then((apiArticles) => {
       setArticles(apiArticles);
+      setIsLoading(false);
     });
-    setIsLoading(false);
   }, []);
 
   if (isLoading)
