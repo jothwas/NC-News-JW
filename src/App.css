@@ -47,6 +47,7 @@
   margin: 0 auto;
   margin-bottom: 2em;
   border: 0.25px solid rgb(248, 159, 138);
+  border-radius: 10px;
 }
 
 .article-card-header {
@@ -145,6 +146,7 @@
 
 .comment-icon {
   margin-right: 0.2em;
+  color: rgb(252, 47, 0);
 }
 
 .article-comments:hover {
