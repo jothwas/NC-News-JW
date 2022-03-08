@@ -1,3 +1,159 @@
 .App {
   text-align: center;
 }
+.color-nav {
+  background-color: rgb(252, 47, 0);
+}
+
+.nav-menuText-colour {
+  color: white;
+}
+.nav-icon-margin {
+  margin-right: 0.3em;
+}
+
+.article-query-container {
+  margin-top: 2em;
+  text-align: center;
+}
+
+.article-query-links {
+  display: inline-block;
+  margin-left: 1em;
+  margin-right: 0.3em;
+  margin-bottom: 1.2em;
+}
+
+.article-query-links:hover {
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+  text-decoration-thickness: 0.25em;
+  text-decoration-color: rgb(252, 47, 0);
+  color: rgb(252, 47, 0);
+  transform: scale(1.05);
+}
+
+.plus {
+  transition: all 0.2s ease-in-out;
+  margin-right: 0.1em;
+}
+
+.article-query-links:hover .plus {
+  color: rgb(252, 47, 0);
+}
+
+.article-card-container {
+  max-width: 750px;
+  margin: 0 auto;
+  margin-bottom: 2em;
+  border: 0.25px solid rgb(248, 159, 138);
+  border-radius: 10px;
+}
+
+.article-card-header {
+  display: inline-block;
+  margin-top: 1em;
+  margin-left: 1em;
+  margin-right: 0.3em;
+  font-weight: 600;
+  color: rgb(252, 47, 0);
+}
+.article-card-header:hover {
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+  text-decoration-thickness: 0.25em;
+  transform: scale(1.05);
+}
+
+.article-list-layout {
+  max-width: 750px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.article-card-title {
+  color: rgb(252, 47, 0);
+  font-weight: 800;
+  margin-left: 1em;
+  margin-right: 1em;
+}
+
+.article-card-body {
+  margin: 1em;
+}
+
+.article-card-read-button {
+  background-color: rgb(252, 47, 0);
+  border: none;
+  color: white;
+  padding-left: 10px;
+  padding-right: 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  border-radius: 4px;
+  margin-bottom: 1em;
+}
+
+.article-card-read-button1 {
+  background-color: white;
+  color: rgb(252, 47, 0);
+  border: 2px solid rgb(252, 47, 0);
+}
+
+.article-card-read-button1:hover {
+  background-color: rgb(252, 47, 0);
+  color: white;
+}
+
+.clock {
+  padding-right: 4px;
+}
+
+.article-card-vote-count {
+  margin-bottom: 0.4em;
+  color: rgb(252, 47, 0);
+}
+
+.up-arrow {
+  color: black;
+}
+
+.down-arrow {
+  color: black;
+}
+
+.up-arrow:hover {
+  color: rgb(252, 47, 0);
+  transform: scale(1.05);
+}
+
+.down-arrow:hover {
+  color: rgb(197, 0, 0);
+  transform: scale(1.05);
+}
+
+.article-card-footer {
+  display: inline-block;
+  margin-left: 1em;
+  margin-right: 0.3em;
+  margin-bottom: 1em;
+  font-weight: 600;
+}
+
+.comment-icon {
+  margin-right: 0.2em;
+  color: rgb(252, 47, 0);
+}
+
+.article-comments:hover {
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+  text-decoration-thickness: 0.25em;
+  text-decoration-color: rgb(252, 47, 0);
+  color: rgb(252, 47, 0);
+  transform: scale(1.05);
+}
