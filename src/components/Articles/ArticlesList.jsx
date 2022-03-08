@@ -12,6 +12,7 @@ const ArticlesList = () => {
   const { topic } = useParams();
 
   useEffect(() => {
+    setFetchError(null);
     setIsLoading(true);
     api
       .fetchAllArticles({ topic })
