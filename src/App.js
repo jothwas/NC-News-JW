@@ -10,6 +10,7 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<ArticlesList />} />
+        <Route path="/articles/:topic" element={<ArticlesList />} />
         <Route path="*" element={<ErrorComponent />} />
       </Routes>
     </BrowserRouter>

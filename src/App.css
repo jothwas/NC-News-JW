@@ -157,3 +157,10 @@
   color: rgb(252, 47, 0);
   transform: scale(1.05);
 }
+
+.article-topic-header {
+  color: rgb(252, 47, 0);
+  text-align: center;
+  margin-bottom: 1em;
+  font-weight: 700;
+}
