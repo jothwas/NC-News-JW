@@ -1,18 +1,23 @@
 import { AddCircleOutline } from "@mui/icons-material";
 import { useEffect, useState } from "react";
 import * as api from "../../utils/api.js";
+import ErrorComponent from "../Errors/ErrorComponent.jsx";
 import ArticleCard from "./ArticleCard.jsx";
 
 const ArticlesList = () => {
   const [articles, setArticles] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     setIsLoading(true);
-    api.fetchAllArticles().then((apiArticles) => {
-      setArticles(apiArticles);
-      setIsLoading(false);
-    });
+    api
+      .fetchAllArticles()
+      .then((apiArticles) => {
+        setArticles(apiArticles);
+        setIsLoading(false);
+      })
+      .catch((err) => setError({ err }));
   }, []);
 
   if (isLoading)
@@ -21,6 +26,10 @@ const ArticlesList = () => {
         <h2>loading...</h2>
       </div>
     );
+
+  if (error) {
+    return <ErrorComponent message={error} />;
+  }
 
   return (
     <div>

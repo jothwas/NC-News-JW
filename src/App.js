@@ -9,6 +9,7 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<ArticlesList />} />
+        <Route path="*" element={<ErrorPage />} />
       </Routes>
     </BrowserRouter>
   );
