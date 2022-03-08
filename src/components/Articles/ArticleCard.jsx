@@ -5,6 +5,7 @@ import {
   ArrowUpwardSharp,
   ModeCommentOutlined,
 } from "@mui/icons-material";
+import { Link } from "react-router-dom";
 
 const ArticleCard = ({ article }) => {
   const { title, body, topic, author, created_at, comment_count, votes } =
@@ -13,7 +14,9 @@ const ArticleCard = ({ article }) => {
   return (
     <div>
       <div className="article-card-container">
-        <p className="article-card-header">topic/{topic}</p>
+        <Link to={`/articles/${topic}`}>
+          <p className="article-card-header">topic/{topic}</p>
+        </Link>
         <p className="article-card-header">posted by/{author}</p>
         <p className="article-card-header">
           <AccessTimeOutlined className="clock" />

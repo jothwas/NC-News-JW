@@ -1,5 +1,6 @@
 import { AddCircleOutline } from "@mui/icons-material";
 import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import * as api from "../../utils/api.js";
 import ErrorComponent from "../Errors/ErrorComponent.jsx";
 import ArticleCard from "./ArticleCard.jsx";
@@ -7,18 +8,26 @@ import ArticleCard from "./ArticleCard.jsx";
 const ArticlesList = () => {
   const [articles, setArticles] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-  const [error, setError] = useState(null);
+  const [fetchError, setFetchError] = useState(null);
+  const { topic } = useParams();
 
   useEffect(() => {
+    setFetchError(null);
     setIsLoading(true);
     api
-      .fetchAllArticles()
+      .fetchAllArticles({ topic })
       .then((apiArticles) => {
         setArticles(apiArticles);
         setIsLoading(false);
       })
-      .catch((err) => setError({ err }));
-  }, []);
+      .catch((err) => {
+        setFetchError({ err });
+      });
+  }, [topic]);
+
+  if (fetchError) {
+    return <ErrorComponent error={fetchError} />;
+  }
 
   if (isLoading)
     return (
@@ -26,10 +35,6 @@ const ArticlesList = () => {
         <h2>loading...</h2>
       </div>
     );
-
-  if (error) {
-    return <ErrorComponent message={error} />;
-  }
 
   return (
     <div>
@@ -42,6 +47,7 @@ const ArticlesList = () => {
           create new article
         </h5>
       </header>
+      {topic ? <h4 className="article-topic-header">topic/{topic}</h4> : null}
       <main className="article-list-layout">
         {articles.map((article) => {
           return <ArticleCard article={article} key={article.article_id} />;

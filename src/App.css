@@ -119,11 +119,11 @@
 }
 
 .up-arrow {
-  color: black;
+  color: rgb(0, 0, 0);
 }
 
 .down-arrow {
-  color: black;
+  color: rgb(0, 0, 0);
 }
 
 .up-arrow:hover {
@@ -132,7 +132,7 @@
 }
 
 .down-arrow:hover {
-  color: rgb(197, 0, 0);
+  color: rgb(252, 47, 0);
   transform: scale(1.05);
 }
 
@@ -146,6 +146,10 @@
 
 .comment-icon {
   margin-right: 0.2em;
+  color: rgb(0, 0, 0);
+}
+
+.article-comments:hover .comment-icon {
   color: rgb(252, 47, 0);
 }
 
@@ -156,4 +160,37 @@
   text-decoration-color: rgb(252, 47, 0);
   color: rgb(252, 47, 0);
   transform: scale(1.05);
+}
+
+.article-topic-header {
+  color: rgb(252, 47, 0);
+  text-align: center;
+  margin-bottom: 1em;
+  font-weight: 700;
+}
+
+.error-page {
+  margin-top: 1.5em;
+  text-align: center;
+  color: rgb(252, 47, 0);
+}
+
+.link-colour {
+  color: rgb(252, 47, 0);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+  text-decoration-thickness: 0.25em;
+}
+
+.link-colour:hover {
+  text-decoration-color: rgb(252, 47, 0);
+  color: #fc2f00;
+}
+
+.computer-image {
+  display: block;
+  margin-top: 3em;
+  margin-left: auto;
+  margin-right: auto;
+  width: 140px;
 }
