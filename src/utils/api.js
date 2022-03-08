@@ -15,6 +15,5 @@ export const fetchAllArticles = ({ sort_by, order, topic, page, limit }) => {
         limit: limit,
       },
     })
-    .then(({ data: { articles } }) => articles)
-    .catch((err) => console.log(err));
+    .then(({ data: { articles } }) => articles);
 };

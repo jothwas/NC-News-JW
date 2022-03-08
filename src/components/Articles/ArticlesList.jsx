@@ -8,7 +8,7 @@ import ArticleCard from "./ArticleCard.jsx";
 const ArticlesList = () => {
   const [articles, setArticles] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-  const [error, setError] = useState(null);
+  const [fetchError, setFetchError] = useState(null);
   const { topic } = useParams();
 
   useEffect(() => {
@@ -19,8 +19,14 @@ const ArticlesList = () => {
         setArticles(apiArticles);
         setIsLoading(false);
       })
-      .catch((err) => setError({ err }));
+      .catch((err) => {
+        setFetchError({ err });
+      });
   }, [topic]);
+
+  if (fetchError) {
+    return <ErrorComponent error={fetchError} />;
+  }
 
   if (isLoading)
     return (
@@ -28,10 +34,6 @@ const ArticlesList = () => {
         <h2>loading...</h2>
       </div>
     );
-
-  if (error) {
-    return <ErrorComponent message={error} />;
-  }
 
   return (
     <div>
