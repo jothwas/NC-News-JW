@@ -27,8 +27,10 @@ const SingleArticle = () => {
       .fetchIndividualArticle(article_id)
       .then((apiArticle) => {
         setArticle(apiArticle);
+        setIsLoading(false);
       })
       .catch((err) => setFetchError({ err }));
+    setIsLoading(true);
     api
       .fetchArticleComments(article_id)
       .then((apiComments) => {
