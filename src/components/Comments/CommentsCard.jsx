@@ -1,12 +1,9 @@
-import {
-  AccessTimeOutlined,
-  ArrowDownwardSharp,
-  ArrowUpwardSharp,
-} from "@mui/icons-material";
+import { AccessTimeOutlined } from "@mui/icons-material";
 import formatDate from "../../utils/date-format";
+import CommentVotes from "../Votes/CommentVotes";
 
 const CommentsCard = ({ comment }) => {
-  const { author, body, created_at, votes } = comment;
+  const { comment_id, author, body, created_at, votes } = comment;
   return (
     <div>
       <div className="comment-card-container">
@@ -18,13 +15,7 @@ const CommentsCard = ({ comment }) => {
         <article>
           <main className="comment-card-body">{body}</main>
         </article>
-        <div className="comment-card-footer">
-          <div className="comment-card-vote-count">
-            <ArrowUpwardSharp className="comment-up-arrow" />
-            {votes}
-            <ArrowDownwardSharp className="comment-down-arrow" />
-          </div>
-        </div>
+        <CommentVotes comment_id={comment_id} votes={votes} />
       </div>
     </div>
   );
