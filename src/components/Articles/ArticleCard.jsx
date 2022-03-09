@@ -31,7 +31,12 @@ const ArticleCard = ({ article }) => {
           {formatDate(created_at)}
         </p>
         <article>
-          <h3 className="article-card-title">{title}</h3>
+          <Link
+            to={`/articles/${article_id}`}
+            style={{ textDecoration: "none" }}
+          >
+            <h3 className="article-list-card-title">{title}</h3>
+          </Link>
           <main className="article-card-body">{`${body.slice(0, 75)}...`}</main>
           <Link to={`/articles/${article_id}`}>
             <button className="article-card-read-button article-card-read-button1">

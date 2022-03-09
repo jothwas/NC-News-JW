@@ -52,6 +52,7 @@
 
 .article-card-header {
   display: inline-block;
+  margin-top: 0.5em;
   margin-left: 1em;
   margin-right: 0.3em;
   font-weight: 600;
@@ -75,6 +76,19 @@
   font-weight: 800;
   margin-left: 1em;
   margin-right: 1em;
+}
+
+.article-list-card-title {
+  color: rgb(252, 47, 0);
+  font-weight: 800;
+  margin-left: 1em;
+  margin-right: 1em;
+}
+
+.article-list-card-title:hover {
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+  text-decoration-thickness: 0.25em;
 }
 
 .article-card-body {
@@ -139,7 +153,7 @@
   display: inline-block;
   margin-left: 1em;
   margin-right: 0.3em;
-  margin-bottom: 0em;
+  margin-bottom: 0.5em;
   font-weight: 600;
 }
 
@@ -214,7 +228,7 @@
 }
 
 .article-card-add-comment {
-  margin-top: 0.7em;
+  margin-top: 0.9em;
 }
 
 .comment-card-container {
