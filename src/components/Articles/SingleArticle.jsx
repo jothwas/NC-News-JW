@@ -1,16 +1,12 @@
 import formatDate from "../../utils/date-format";
-import {
-  AccessTimeOutlined,
-  ArrowDownwardSharp,
-  ArrowUpwardSharp,
-  ModeCommentOutlined,
-} from "@mui/icons-material";
+import { AccessTimeOutlined } from "@mui/icons-material";
 import { Link, useParams } from "react-router-dom";
 import { useContext, useEffect, useState } from "react";
 import * as api from "../../utils/api.js";
 import ErrorComponent from "../Errors/ErrorComponent";
 import { UserContext } from "../../contexts/UserContext";
 import CommentsCard from "../Comments/CommentsCard";
+import ArticleVotes from "../Votes/ArticleVotes";
 
 const SingleArticle = () => {
   const { article_id } = useParams();
@@ -78,22 +74,11 @@ const SingleArticle = () => {
             <h3 className="article-card-title">{title}</h3>
             <main className="article-card-body">{body}</main>
           </article>
-          <div className="article-card-footer">
-            <div className="article-card-vote-count">
-              <ArrowUpwardSharp className="up-arrow" />
-              {votes}
-              <ArrowDownwardSharp className="down-arrow" />
-            </div>
-            <div className="article-comments">
-              <ModeCommentOutlined className="comment-icon" />
-              {`${comment_count} comments`}
-            </div>
-            <div>
-              <button className="article-card-read-button article-card-read-button1 article-card-add-comment">
-                add comment
-              </button>
-            </div>
-          </div>
+          <ArticleVotes
+            article_id={article_id}
+            votes={votes}
+            comment_count={comment_count}
+          />
         </div>
         <main>
           {comments.map((comment) => {
