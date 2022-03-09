@@ -52,7 +52,7 @@
 
 .article-card-header {
   display: inline-block;
-  margin-top: 1em;
+  margin-top: 0.5em;
   margin-left: 1em;
   margin-right: 0.3em;
   font-weight: 600;
@@ -76,6 +76,19 @@
   font-weight: 800;
   margin-left: 1em;
   margin-right: 1em;
+}
+
+.article-list-card-title {
+  color: rgb(252, 47, 0);
+  font-weight: 800;
+  margin-left: 1em;
+  margin-right: 1em;
+}
+
+.article-list-card-title:hover {
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+  text-decoration-thickness: 0.25em;
 }
 
 .article-card-body {
@@ -140,7 +153,7 @@
   display: inline-block;
   margin-left: 1em;
   margin-right: 0.3em;
-  margin-bottom: 1em;
+  margin-bottom: 0.5em;
   font-weight: 600;
 }
 
@@ -193,4 +206,85 @@
   margin-left: auto;
   margin-right: auto;
   width: 140px;
+}
+
+.article-individual-card-container {
+  max-width: 750px;
+  margin: 0 auto;
+  margin-top: 3em;
+  margin-bottom: 2em;
+  border: 0.25px solid rgb(248, 159, 138);
+  border-radius: 10px;
+}
+
+.article-card-edit-delete-spacing {
+  margin-top: 1em;
+  margin-left: 0.3em;
+  margin-right: 0.3em;
+}
+
+.hidden {
+  display: none;
+}
+
+.article-card-add-comment {
+  margin-top: 0.9em;
+}
+
+.comment-card-container {
+  max-width: 600px;
+  margin: 0 auto;
+  margin-bottom: 2em;
+  border: 0.25px solid rgb(248, 159, 138);
+  border-radius: 10px;
+}
+
+.comment-card-header {
+  margin-top: 0.5em;
+  display: inline-block;
+  margin-left: 1em;
+  margin-right: 0.3em;
+  font-weight: 600;
+  color: rgb(252, 47, 0);
+}
+.comment-card-header:hover {
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+  text-decoration-thickness: 0.25em;
+  transform: scale(1.05);
+}
+
+.comment-card-body {
+  margin: 1em;
+}
+
+.comment-card-footer {
+  display: inline-block;
+  margin-left: 1em;
+  margin-right: 0.3em;
+  margin-bottom: 0em;
+  font-weight: 600;
+}
+
+.comment-card-vote-count {
+  margin-bottom: 0.4em;
+  color: rgb(252, 47, 0);
+}
+
+.comment-up-arrow {
+  color: rgb(0, 0, 0);
+}
+
+.comment-down-arrow {
+  color: rgb(0, 0, 0);
+}
+
+.comment-up-arrow:hover {
+  color: rgb(252, 47, 0);
+  transform: scale(1.05);
+}
+
+.comment-down-arrow:hover {
+  color: rgb(252, 47, 0);
+  transform: scale(1.05);
 }
