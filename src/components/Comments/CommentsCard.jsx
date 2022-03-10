@@ -15,7 +15,7 @@ const CommentsCard = ({ comment }) => {
         <article>
           <main className="comment-card-body">{body}</main>
         </article>
-        <CommentVotes comment_id={comment_id} votes={votes} />
+        <CommentVotes comment_id={comment_id} votes={votes} author={author} />
       </div>
     </div>
   );

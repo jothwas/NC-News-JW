@@ -44,6 +44,7 @@ const ArticleCard = ({ article }) => {
           article_id={article_id}
           votes={votes}
           comment_count={comment_count}
+          author={author}
         />
       </div>
     </div>

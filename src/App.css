@@ -304,3 +304,8 @@
 .orange-highlight {
   color: rgb(252, 47, 0);
 }
+
+.greyed-out {
+  color: rgb(121, 121, 121);
+  opacity: 50%;
+}
