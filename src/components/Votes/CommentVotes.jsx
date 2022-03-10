@@ -10,12 +10,7 @@ const CommentVotes = ({ comment_id, votes, author }) => {
   const [voteCheck, setVoteCheck] = useState(0);
 
   const voteAction = (votecrement) => {
-    api.patchCommentVotes(comment_id, votecrement).catch((err) => {
-      setCommentVotes((currentVoteCount) => currentVoteCount - votecrement);
-      return alert(
-        "Error: vote not registered, please refresh the page and try again."
-      );
-    });
+    api.patchCommentVotes(comment_id, votecrement);
     setCommentVotes((currentVoteCount) => currentVoteCount + votecrement);
     setVoteCheck((zero) => zero + votecrement);
   };
@@ -29,11 +24,7 @@ const CommentVotes = ({ comment_id, votes, author }) => {
         >
           <ArrowUpwardSharp
             className={`up-arrow ${
-              voteCheck === 1
-                ? `orange-highlight`
-                : loggedInUser.username === author
-                ? `greyed-out`
-                : null
+              voteCheck === 1 ? `orange-highlight` : null
             }`}
             disabled={loggedInUser.username === author}
           />
@@ -45,11 +36,7 @@ const CommentVotes = ({ comment_id, votes, author }) => {
         >
           <ArrowDownwardSharp
             className={`down-arrow ${
-              voteCheck === -1
-                ? `orange-highlight`
-                : loggedInUser.username === author
-                ? `greyed-out`
-                : null
+              voteCheck === -1 ? `orange-highlight` : null
             }`}
           />
         </IconButton>

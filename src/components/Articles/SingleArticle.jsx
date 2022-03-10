@@ -7,6 +7,7 @@ import ErrorComponent from "../Errors/ErrorComponent";
 import { UserContext } from "../../contexts/UserContext";
 import CommentsCard from "../Comments/CommentsCard";
 import ArticleVotes from "../Votes/ArticleVotes";
+import AddComment from "../Comments/AddComment";
 
 const SingleArticle = () => {
   const { article_id } = useParams();
@@ -80,10 +81,23 @@ const SingleArticle = () => {
             comment_count={comment_count}
             author={author}
           />
+          <div className="add-comment-container">
+            <button className="article-card-read-button article-card-read-button1 article-card-add-comment">
+              add a comment
+            </button>
+            <div className="comment-card-container">
+              <AddComment article_id={article_id} setComments={setComments} />
+            </div>
+          </div>
         </div>
         <main>
-          {comments.map((comment) => {
-            return <CommentsCard comment={comment} key={comment.comment_id} />;
+          {comments.map((comment, index) => {
+            return (
+              <CommentsCard
+                comment={comment}
+                key={`${comment.author} - ${index}`}
+              />
+            );
           })}
         </main>
       </div>

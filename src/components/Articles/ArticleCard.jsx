@@ -34,11 +34,13 @@ const ArticleCard = ({ article }) => {
             <h3 className="article-list-card-title">{title}</h3>
           </Link>
           <main className="article-card-body">{`${body.slice(0, 75)}...`}</main>
-          <Link to={`/articles/${article_id}`}>
-            <button className="article-card-read-button article-card-read-button1">
-              read more
-            </button>
-          </Link>
+          <div className="center-container">
+            <Link to={`/articles/${article_id}`}>
+              <button className="article-card-read-button article-card-read-button1">
+                read more
+              </button>
+            </Link>
+          </div>
         </article>
         <ArticleVotes
           article_id={article_id}
