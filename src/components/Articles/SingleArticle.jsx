@@ -92,10 +92,7 @@ const SingleArticle = () => {
             >
               add a comment
             </button>
-            <div
-              className="comment-card-container"
-              style={{ display: addCommentVis ? "" : "none" }}
-            >
+            <div style={{ display: addCommentVis ? "" : "none" }}>
               <AddComment article_id={article_id} setComments={setComments} />
             </div>
           </div>
