@@ -10,7 +10,12 @@ const CommentVotes = ({ comment_id, votes, author }) => {
   const [voteCheck, setVoteCheck] = useState(0);
 
   const voteAction = (votecrement) => {
-    api.patchCommentVotes(comment_id, votecrement);
+    api.patchCommentVotes(comment_id, votecrement).catch((err) => {
+      setCommentVotes((currentVoteCount) => currentVoteCount - votecrement);
+      return alert(
+        "Error: vote not registered, please refresh the page and try again."
+      );
+    });
     setCommentVotes((currentVoteCount) => currentVoteCount + votecrement);
     setVoteCheck((zero) => zero + votecrement);
   };

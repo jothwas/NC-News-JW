@@ -13,8 +13,15 @@ const ArticleVotes = ({ article_id, votes, comment_count, author }) => {
   const [articleVotes, setArticleVotes] = useState(votes);
   const [voteCheck, setVoteCheck] = useState(0);
 
+  // look to make dry-er at some point instead of two files for comments / articles, make one component re-useable by both.
+
   const voteAction = (votecrement) => {
-    api.patchArticleVotes(article_id, votecrement);
+    api.patchArticleVotes(article_id, votecrement).catch((err) => {
+      setArticleVotes((currentVoteCount) => currentVoteCount - votecrement);
+      return alert(
+        "Error: vote not registered, please refresh the page and try again."
+      );
+    });
     setArticleVotes((currentVoteCount) => currentVoteCount + votecrement);
     setVoteCheck((zero) => zero + votecrement);
   };
