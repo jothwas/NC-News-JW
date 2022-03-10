@@ -43,7 +43,12 @@ const AddComment = ({ article_id, setComments }) => {
           value={newComment}
           onChange={(e) => setNewComment(e.target.value)}
           required
-          style={{ height: "60px", borderStyle: "solid" }}
+          style={{
+            height: "60px",
+            borderStyle: "solid",
+            borderColor: "rgb(252, 47, 0)",
+            borderWidth: "0.25px",
+          }}
         />
         <button
           className="article-card-read-button article-card-read-button1 article-card-post-comment"
