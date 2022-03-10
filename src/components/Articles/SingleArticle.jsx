@@ -16,6 +16,7 @@ const SingleArticle = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [fetchError, setFetchError] = useState(null);
   const [comments, setComments] = useState([]);
+  const [addCommentVis, setAddCommentVis] = useState(false);
 
   useEffect(() => {
     setFetchError(null);
@@ -82,10 +83,19 @@ const SingleArticle = () => {
             author={author}
           />
           <div className="add-comment-container">
-            <button className="article-card-read-button article-card-read-button1 article-card-add-comment">
+            <button
+              type="submit"
+              className="article-card-read-button article-card-read-button1 article-card-add-comment"
+              onClick={() => {
+                setAddCommentVis(!addCommentVis);
+              }}
+            >
               add a comment
             </button>
-            <div className="comment-card-container">
+            <div
+              className="comment-card-container"
+              style={{ display: addCommentVis ? "" : "none" }}
+            >
               <AddComment article_id={article_id} setComments={setComments} />
             </div>
           </div>

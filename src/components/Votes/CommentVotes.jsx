@@ -24,7 +24,11 @@ const CommentVotes = ({ comment_id, votes, author }) => {
         >
           <ArrowUpwardSharp
             className={`up-arrow ${
-              voteCheck === 1 ? `orange-highlight` : null
+              voteCheck === 1
+                ? `orange-highlight`
+                : loggedInUser.username === author
+                ? `greyed-out`
+                : null
             }`}
             disabled={loggedInUser.username === author}
           />
@@ -36,7 +40,11 @@ const CommentVotes = ({ comment_id, votes, author }) => {
         >
           <ArrowDownwardSharp
             className={`down-arrow ${
-              voteCheck === -1 ? `orange-highlight` : null
+              voteCheck === -1
+                ? `orange-highlight`
+                : loggedInUser.username === author
+                ? `greyed-out`
+                : null
             }`}
           />
         </IconButton>

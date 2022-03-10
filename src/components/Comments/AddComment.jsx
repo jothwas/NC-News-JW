@@ -13,6 +13,7 @@ const AddComment = ({ article_id, setComments }) => {
     const newCommentDetails = {
       author: loggedInUser.username,
       body: newComment,
+      votes: 0,
     };
 
     setComments((currentComments) => {
