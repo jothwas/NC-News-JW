@@ -29,3 +29,11 @@ export const fetchArticleComments = (article_id) => {
     .get(`/articles/${article_id}/comments`)
     .then(({ data: { comments } }) => comments);
 };
+
+export const patchArticleVotes = (article_id, votes) => {
+  return newsApi.patch(`/articles/${article_id}`, { inc_votes: votes });
+};
+
+export const patchCommentVotes = (comment_id, votes) => {
+  return newsApi.patch(`/comments/${comment_id}`, { inc_votes: votes });
+};

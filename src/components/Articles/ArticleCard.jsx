@@ -1,11 +1,7 @@
 import formatDate from "../../utils/date-format";
-import {
-  AccessTimeOutlined,
-  ArrowDownwardSharp,
-  ArrowUpwardSharp,
-  ModeCommentOutlined,
-} from "@mui/icons-material";
+import { AccessTimeOutlined } from "@mui/icons-material";
 import { Link } from "react-router-dom";
+import ArticleVotes from "../Votes/ArticleVotes";
 
 const ArticleCard = ({ article }) => {
   const {
@@ -44,17 +40,12 @@ const ArticleCard = ({ article }) => {
             </button>
           </Link>
         </article>
-        <div className="article-card-footer">
-          <div className="article-card-vote-count">
-            <ArrowUpwardSharp className="up-arrow" />
-            {votes}
-            <ArrowDownwardSharp className="down-arrow" />
-          </div>
-          <div className="article-comments">
-            <ModeCommentOutlined className="comment-icon" />
-            {`${comment_count} comments`}
-          </div>
-        </div>
+        <ArticleVotes
+          article_id={article_id}
+          votes={votes}
+          comment_count={comment_count}
+          author={author}
+        />
       </div>
     </div>
   );
