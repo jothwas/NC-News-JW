@@ -320,7 +320,8 @@
 }
 
 .comment-form-container {
-  width: 500px;
+  max-width: 500px;
+  width: auto;
   height: auto;
   margin: 0 auto;
   padding-left: 2em;
