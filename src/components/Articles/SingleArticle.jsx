@@ -7,6 +7,7 @@ import ErrorComponent from "../Errors/ErrorComponent";
 import { UserContext } from "../../contexts/UserContext";
 import CommentsCard from "../Comments/CommentsCard";
 import ArticleVotes from "../Votes/ArticleVotes";
+import AddComment from "../Comments/AddComment";
 
 const SingleArticle = () => {
   const { article_id } = useParams();
@@ -15,6 +16,7 @@ const SingleArticle = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [fetchError, setFetchError] = useState(null);
   const [comments, setComments] = useState([]);
+  const [addCommentVis, setAddCommentVis] = useState(false);
 
   useEffect(() => {
     setFetchError(null);
@@ -80,10 +82,29 @@ const SingleArticle = () => {
             comment_count={comment_count}
             author={author}
           />
+          <div className="add-comment-container">
+            <button
+              type="submit"
+              className="article-card-read-button article-card-read-button1 article-card-add-comment"
+              onClick={() => {
+                setAddCommentVis(!addCommentVis);
+              }}
+            >
+              add a comment
+            </button>
+            <div style={{ display: addCommentVis ? "" : "none" }}>
+              <AddComment article_id={article_id} setComments={setComments} />
+            </div>
+          </div>
         </div>
         <main>
-          {comments.map((comment) => {
-            return <CommentsCard comment={comment} key={comment.comment_id} />;
+          {comments.map((comment, index) => {
+            return (
+              <CommentsCard
+                comment={comment}
+                key={`${comment.author} - ${index}`}
+              />
+            );
           })}
         </main>
       </div>

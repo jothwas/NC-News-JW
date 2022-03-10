@@ -37,3 +37,10 @@ export const patchArticleVotes = (article_id, votes) => {
 export const patchCommentVotes = (comment_id, votes) => {
   return newsApi.patch(`/comments/${comment_id}`, { inc_votes: votes });
 };
+
+export const postComment = (article_id, username, comment) => {
+  return newsApi.post(`/articles/${article_id}/comments`, {
+    username: username,
+    comment: comment,
+  });
+};
