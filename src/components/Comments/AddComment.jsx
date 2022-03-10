@@ -27,7 +27,8 @@ const AddComment = ({ article_id, setComments }) => {
       })
       .catch(() => {
         setComments((currentComments) => {
-          return currentComments.slice(1);
+          const copiedComments = [...currentComments];
+          return copiedComments.filter((comment, index) => index !== 0);
         });
         alert("Error: please submit your comment again");
       });
