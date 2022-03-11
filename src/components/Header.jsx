@@ -9,8 +9,8 @@ const Header = () => {
     <Navbar collapseOnSelect expand="lg" variant="dark" className="color-nav">
       <Container>
         <Navbar.Brand href="/">
-          <CellTowerOutlined className="nav-icon-margin" />
-          // readdit: a nc news app
+          <CellTowerOutlined className="nav-icon-margin" />/ readdit: a nc news
+          app
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
