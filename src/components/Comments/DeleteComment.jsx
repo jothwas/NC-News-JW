@@ -29,7 +29,7 @@ const DeleteComment = ({ comment_id, author, body, votes, setComments }) => {
   return (
     <button
       className="article-card-read-button article-card-read-button1"
-      hidden={author === loggedInUser.username ? "" : true}
+      hidden={author === loggedInUser.username ? null : true}
       onClick={deleteCommentClicker}
     >
       delete comment
