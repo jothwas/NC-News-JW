@@ -8,6 +8,7 @@ import { UserContext } from "../../contexts/UserContext";
 import CommentsCard from "../Comments/CommentsCard";
 import ArticleVotes from "../Votes/ArticleVotes";
 import AddComment from "../Comments/AddComment";
+import LoadingComp from "../Loading/LoadingComp";
 
 const SingleArticle = () => {
   const { article_id } = useParams();
@@ -42,12 +43,7 @@ const SingleArticle = () => {
     return <ErrorComponent error={fetchError} />;
   }
 
-  if (isLoading)
-    return (
-      <div>
-        <h2>loading...</h2>
-      </div>
-    );
+  if (isLoading) return <LoadingComp />;
 
   const { title, topic, author, body, comment_count, created_at, votes } =
     article;

@@ -11,6 +11,7 @@ import {
 } from "react-router-dom";
 import * as api from "../../utils/api.js";
 import ErrorComponent from "../Errors/ErrorComponent.jsx";
+import LoadingComp from "../Loading/LoadingComp.jsx";
 import ArticleCard from "./ArticleCard.jsx";
 
 const ArticlesList = () => {
@@ -49,12 +50,7 @@ const ArticlesList = () => {
     return <ErrorComponent error={fetchError} />;
   }
 
-  if (isLoading)
-    return (
-      <div>
-        <h2>loading...</h2>
-      </div>
-    );
+  if (isLoading) return <LoadingComp />;
 
   return (
     <div>
