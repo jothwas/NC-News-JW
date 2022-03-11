@@ -336,3 +336,11 @@
 .button-padding {
   margin-left: 1em;
 }
+
+.order-articles-icon {
+  margin-bottom: 1em;
+}
+.order-articles-icon:hover {
+  margin-bottom: 1em;
+  cursor: pointer;
+}

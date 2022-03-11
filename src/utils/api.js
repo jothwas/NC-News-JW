@@ -4,15 +4,25 @@ const newsApi = axios.create({
   baseURL: "https://news-api-jw.herokuapp.com/api",
 });
 
-export const fetchAllArticles = ({ sort_by, order, topic, page, limit }) => {
+export const fetchAllArticles = ({
+  sort_by,
+  order,
+  topic,
+  page,
+  limit,
+  created_at,
+  comment_count,
+}) => {
   return newsApi
     .get("/articles", {
       params: {
         sort_by: sort_by,
         order: order,
+        created_at: created_at,
         topic: topic,
         page: page,
         limit: limit,
+        comment_count: comment_count,
       },
     })
     .then(({ data: { articles } }) => articles);
