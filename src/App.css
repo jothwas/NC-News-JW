@@ -348,3 +348,8 @@
   text-decoration-thickness: 0.25em;
   transform: scale(1.05);
 }
+
+.error-home:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+}
