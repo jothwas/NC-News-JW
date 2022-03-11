@@ -102,6 +102,7 @@ const SingleArticle = () => {
             return (
               <CommentsCard
                 comment={comment}
+                setComments={setComments}
                 key={`${comment.author} - ${index}`}
               />
             );
