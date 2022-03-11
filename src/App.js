@@ -6,6 +6,7 @@ import ArticlesList from "./components/Articles/ArticlesList";
 import SingleArticle from "./components/Articles/SingleArticle";
 import ErrorPage from "./components/Errors/ErrorPage";
 import Header from "./components/Header";
+import AddArticle from "./components/Articles/AddArticle";
 
 function App() {
   const [loggedInUser, setLoggedInUser] = useState({
@@ -20,6 +21,7 @@ function App() {
           <Route path="/" element={<ArticlesList />} />
           <Route path="/topics/:topic" element={<ArticlesList />} />
           <Route path="/articles/:article_id" element={<SingleArticle />} />
+          <Route path="/articles/add" element={<AddArticle />} />
           <Route path="*" element={<ErrorPage />} />
         </Routes>
       </BrowserRouter>

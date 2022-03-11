@@ -360,3 +360,20 @@
   align-items: center;
   height: 100vh;
 }
+
+.post-article-card-title {
+  color: rgb(252, 47, 0);
+  font-weight: 800;
+  margin-top: 1em;
+  margin-left: 1em;
+  margin-right: 1em;
+}
+
+.post-article-form-field {
+  color: rgb(252, 47, 0);
+  font-size: 1.2em;
+  font-weight: 700;
+  margin-top: 0.4em;
+  margin-left: 1em;
+  margin-right: 1em;
+}
