@@ -1,70 +1,75 @@
-# Getting Started with Create React App
+# / readdit: a nc news app
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A hosted version of this project can be found here: https://jw-nc-news.netlify.app.
 
-## Available Scripts
+The repo for this project can be found here: https://github.com/jothwas/nc-news-jw
 
-In the project directory, you can run:
+This individual project is the Frontend for a prior Backend project I also completed myself.
 
-### `npm start`
+## What is readdit
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+/ readdit is in the style of a news aggregating website and was built with React.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+The website consists of articles which can be viewed, commented on, upvoted and downvoted, added and and deleted.
 
-### `npm test`
+Users can also comment on articles with similar functionality options as for the articles.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Backend
 
-### `npm run build`
+The API for this Frontend project was built using RESTful techniques to interact with a database.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+A repo for the Backend can be found here: https://github.com/jothwas/news-api-jw
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+The hosted API from this Backend can be found here: https://news-api-jw.herokuapp.com/api
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Run Locally
 
-### `npm run eject`
+To run this project locally, first clone its repo from GitHub:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```bash
+  git clone https://github.com/jothwas/nc-news-jw.git
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Go to the project directory:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```bash
+  cd nc-news-jw
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Install the project's required dependencies:
 
-## Learn More
+```bash
+  npm i
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Run the app locally:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```bash
+  npm start
+```
 
-### Code Splitting
+## Minimum Requirements
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+To ensure the app runs correctly, please ensure you have the following software versions installed as a minimum:
 
-### Analyzing the Bundle Size
+```
+Node.js: v17.3.1
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+To check your current Node version, input into the command line:
 
-### Making a Progressive Web App
+```
+node -v
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Future Features
 
-### Advanced Configuration
+I plan to add further features to this project in the near future, including:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Log-In functionality: currently the site is permanently logged in as one user, this would allow the user to 'log-in' as themselves
+- Create a new user
+- Clicking a user's name will filter the article view by their username so you can only see articles they have written
+- Ability to add a new article
+- Clicking the comments from the main article list will direct you to the article page and navigate directly to the comments
+- Create a new topic
+- If a new topic is created it appears in the dropdown menu on the site's navigate
