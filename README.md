@@ -10,7 +10,7 @@ This individual project is the Frontend for a prior Backend project I also compl
 
 / readdit is in the style of a news aggregating website and was built with React.
 
-The website consists of articles which can be viewed, commented on, upvoted and downvoted, added and and deleted.
+The website consists of articles which can be viewed, commented on, upvoted and downvoted, added and and deleted, sorted and ordered.
 
 Users can also comment on articles with similar functionality options as for the articles.
 
