@@ -6,6 +6,7 @@ import {
 import { useEffect, useState } from "react";
 import {
   createSearchParams,
+  Link,
   useParams,
   useSearchParams,
 } from "react-router-dom";
@@ -79,10 +80,12 @@ const ArticlesList = () => {
         >
           hottest
         </h5>
-        <h5 className="article-query-links">
-          <AddCircleOutline className="plus" />
-          create new article
-        </h5>
+        <Link to="/articles/add" style={{ color: "black" }}>
+          <h5 className="article-query-links">
+            <AddCircleOutline className="plus" />
+            create new article
+          </h5>{" "}
+        </Link>
         <div
           className="order-articles-icon"
           onClick={() => {
