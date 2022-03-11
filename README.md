@@ -1,12 +1,12 @@
 # / readdit: a nc news app
 
-A hosted version of this project can be found here: https://jw-nc-news.netlify.app.
+A hosted version of this project can be found here: https://readdit-nc-news.netlify.app.
 
 The repo for this project can be found here: https://github.com/jothwas/nc-news-jw
 
 This individual project is the Frontend for a prior Backend project I also completed myself.
 
-## What is readdit
+## What is / readdit
 
 / readdit is in the style of a news aggregating website and was built with React.
 
