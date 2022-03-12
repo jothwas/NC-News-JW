@@ -70,5 +70,4 @@ I plan to add further features to this project in the near future, including:
 - Create a new user
 - Clicking a user's name will filter the article view by their username so you can only see articles they have written
 - Clicking the comments from the main article list will direct you to the article page and navigate directly to the comments
-- Create a new topic
-- If a new topic is created it appears in the dropdown menu on the site's navigate
+- Pagination

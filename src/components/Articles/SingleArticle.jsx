@@ -1,6 +1,6 @@
 import formatDate from "../../utils/date-format";
 import { AccessTimeOutlined } from "@mui/icons-material";
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { useContext, useEffect, useState } from "react";
 import * as api from "../../utils/api.js";
 import ErrorComponent from "../Errors/ErrorComponent";
@@ -13,6 +13,8 @@ import LoadingComp from "../Loading/LoadingComp";
 const SingleArticle = () => {
   const { article_id } = useParams();
   const { loggedInUser } = useContext(UserContext);
+  let navigate = useNavigate();
+
   const [article, setArticle] = useState({});
   const [isLoading, setIsLoading] = useState(true);
   const [fetchError, setFetchError] = useState(null);
@@ -39,6 +41,20 @@ const SingleArticle = () => {
       .catch((err) => setFetchError({ err }));
   }, [article_id]);
 
+  const deleteArticleClicker = () => {
+    api
+      .deleteArticle(article_id)
+      .then(() => {
+        alert("Article deleted: now being redirected to Home...");
+        navigate("/");
+      })
+      .catch(() => {
+        alert(
+          "Error: article not deleted. Please check your connection and click to delete article again."
+        );
+      });
+  };
+
   if (fetchError) {
     return <ErrorComponent error={fetchError} />;
   }
@@ -56,7 +72,12 @@ const SingleArticle = () => {
             <button className="article-card-read-button article-card-read-button1 article-card-edit-delete-spacing">
               edit
             </button>
-            <button className="article-card-read-button article-card-read-button1 article-card-edit-delete-spacing">
+            <button
+              className="article-card-read-button article-card-read-button1 article-card-edit-delete-spacing"
+              onClick={() => {
+                deleteArticleClicker();
+              }}
+            >
               delete
             </button>
           </div>
