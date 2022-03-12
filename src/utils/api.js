@@ -64,3 +64,7 @@ export const postArticle = (newArticle) => {
     .post(`/articles`, newArticle)
     .then(({ data: { article } }) => article);
 };
+
+export const deleteArticle = (article_id) => {
+  return newsApi.delete(`/articles/${article_id}`);
+};
