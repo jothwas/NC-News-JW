@@ -25,6 +25,9 @@ const AddArticle = () => {
       .postArticle(newArticleDetails)
       .then((article) => {
         const { article_id } = article;
+        alert(
+          "Article successfuly posted: you will now be redirected to your new article..."
+        );
         navigate(`/articles/${article_id}`);
       })
       .catch(() => {
