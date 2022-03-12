@@ -19,10 +19,6 @@ const Header = () => {
             <Nav.Link href="/topics/coding">coding</Nav.Link>
             <Nav.Link href="/topics/football">football</Nav.Link>
             <Nav.Link href="/topics/cooking">cooking</Nav.Link>
-            <NavDropdown
-              title="more"
-              id="collasible-nav-dropdown"
-            ></NavDropdown>
           </Nav>
           <Nav>
             <Nav.Link eventKey={2} href="#memes">
