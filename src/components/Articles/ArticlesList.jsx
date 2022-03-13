@@ -84,7 +84,7 @@ const ArticlesList = () => {
           <h5 className="article-query-links">
             <AddCircleOutline className="plus" />
             create new article
-          </h5>{" "}
+          </h5>
         </Link>
         <div
           className="order-articles-icon"
