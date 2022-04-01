@@ -3,7 +3,7 @@ import formatDate from "../../utils/date-format";
 import CommentVotes from "../Votes/CommentVotes";
 import DeleteComment from "./DeleteComment";
 
-const CommentsCard = ({ comment, setComments }) => {
+const CommentsCard = ({ comment, setComments, addCommentId }) => {
   const { comment_id, author, body, created_at, votes } = comment;
 
   return (
@@ -20,6 +20,7 @@ const CommentsCard = ({ comment, setComments }) => {
         <CommentVotes comment_id={comment_id} votes={votes} author={author} />
         <DeleteComment
           comment_id={comment_id}
+          addCommentId={addCommentId}
           author={author}
           body={body}
           votes={votes}

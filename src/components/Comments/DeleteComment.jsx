@@ -2,7 +2,14 @@ import { useContext, useState } from "react";
 import { UserContext } from "../../contexts/UserContext";
 import * as api from "../../utils/api.js";
 
-const DeleteComment = ({ comment_id, author, body, votes, setComments }) => {
+const DeleteComment = ({
+  comment_id,
+  author,
+  body,
+  votes,
+  setComments,
+  addCommentId,
+}) => {
   const { loggedInUser } = useContext(UserContext);
   const [deletedComment] = useState({
     author,
@@ -10,16 +17,13 @@ const DeleteComment = ({ comment_id, author, body, votes, setComments }) => {
     votes,
   });
 
-  console.log(comment_id);
-
   const deleteCommentClicker = () => {
     setComments((currentComments) => {
-      console.log(currentComments);
       return [...currentComments].filter(
         (comment) => comment.comment_id !== comment_id
       );
     });
-    api.deleteComment(comment_id).catch(() => {
+    api.deleteComment(comment_id ? comment_id : addCommentId).catch(() => {
       setComments((currentComments) => {
         return [deletedComment, ...currentComments];
       });

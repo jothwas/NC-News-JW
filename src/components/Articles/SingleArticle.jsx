@@ -5,10 +5,10 @@ import { useContext, useEffect, useState } from "react";
 import * as api from "../../utils/api.js";
 import ErrorComponent from "../Errors/ErrorComponent";
 import { UserContext } from "../../contexts/UserContext";
-import CommentsCard from "../Comments/CommentsCard";
 import ArticleVotes from "../Votes/ArticleVotes";
 import AddComment from "../Comments/AddComment";
 import LoadingComp from "../Loading/LoadingComp";
+import CommentsList from "../Comments/CommentsList";
 
 const SingleArticle = () => {
   const { article_id } = useParams();
@@ -20,6 +20,7 @@ const SingleArticle = () => {
   const [fetchError, setFetchError] = useState(null);
   const [comments, setComments] = useState([]);
   const [addCommentVis, setAddCommentVis] = useState(false);
+  const [addCommentId, setAddCommentId] = useState();
 
   useEffect(() => {
     setFetchError(null);
@@ -28,14 +29,6 @@ const SingleArticle = () => {
       .fetchIndividualArticle(article_id)
       .then((apiArticle) => {
         setArticle(apiArticle);
-        setIsLoading(false);
-      })
-      .catch((err) => setFetchError({ err }));
-    setIsLoading(true);
-    api
-      .fetchArticleComments(article_id)
-      .then((apiComments) => {
-        setComments(apiComments);
         setIsLoading(false);
       })
       .catch((err) => setFetchError({ err }));
@@ -110,20 +103,22 @@ const SingleArticle = () => {
               add a comment
             </button>
             <div style={{ display: addCommentVis ? "" : "none" }}>
-              <AddComment article_id={article_id} setComments={setComments} />
+              <AddComment
+                article_id={article_id}
+                setComments={setComments}
+                setAddCommentId={setAddCommentId}
+                addCommentId={addCommentId}
+              />
             </div>
           </div>
         </div>
         <main>
-          {comments.map((comment, index) => {
-            return (
-              <CommentsCard
-                comment={comment}
-                setComments={setComments}
-                key={`${comment.author} - ${index}`}
-              />
-            );
-          })}
+          <CommentsList
+            article_id={article_id}
+            comments={comments}
+            setComments={setComments}
+            addCommentId={addCommentId}
+          />
         </main>
       </div>
     </div>
