@@ -10,9 +10,12 @@ const DeleteComment = ({ comment_id, author, body, votes, setComments }) => {
     votes,
   });
 
+  console.log(comment_id);
+
   const deleteCommentClicker = () => {
-    setComments((curentComments) => {
-      return [...curentComments].filter(
+    setComments((currentComments) => {
+      console.log(currentComments);
+      return [...currentComments].filter(
         (comment) => comment.comment_id !== comment_id
       );
     });

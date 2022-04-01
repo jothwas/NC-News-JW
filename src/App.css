@@ -60,6 +60,14 @@
   font-weight: 600;
   color: rgb(252, 47, 0);
 }
+.article-card-header-no-hover {
+  display: inline-block;
+  margin-top: 0.5em;
+  margin-left: 1em;
+  margin-right: 0.3em;
+  font-weight: 600;
+  color: rgb(252, 47, 0);
+}
 .article-card-header:hover {
   text-decoration: underline;
   text-underline-offset: 0.2em;

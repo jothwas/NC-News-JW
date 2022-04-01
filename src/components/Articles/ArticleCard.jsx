@@ -21,8 +21,8 @@ const ArticleCard = ({ article }) => {
         <Link to={`/topics/${topic}`}>
           <p className="article-card-header">topic/{topic}</p>
         </Link>
-        <p className="article-card-header">posted by/{author}</p>
-        <p className="article-card-header">
+        <p className="article-card-header-no-hover">posted by/{author}</p>
+        <p className="article-card-header-no-hover">
           <AccessTimeOutlined className="clock" />
           {formatDate(created_at)}
         </p>
