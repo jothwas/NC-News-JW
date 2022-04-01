@@ -33,6 +33,11 @@ const ArticlesList = () => {
   const sort_by = searchParams.get("sort_by");
   const order = searchParams.get("order");
 
+  // call API for first ten articles - setArticle state as 10 articles.
+  // guard statement, if article state === to total_count, stop
+  // continue to call API, updating state of articles with new fetch added ot last
+  // add to page number on each api request
+
   useEffect(() => {
     setFetchError(null);
     setIsLoading(true);

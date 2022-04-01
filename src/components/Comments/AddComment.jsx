@@ -3,7 +3,12 @@ import { Form } from "react-bootstrap";
 import { UserContext } from "../../contexts/UserContext";
 import * as api from "../../utils/api.js";
 
-const AddComment = ({ article_id, setComments }) => {
+const AddComment = ({
+  article_id,
+  setComments,
+  setAddCommentId,
+  addCommentId,
+}) => {
   const { loggedInUser } = useContext(UserContext);
   const [newComment, setNewComment] = useState("");
 
@@ -22,7 +27,8 @@ const AddComment = ({ article_id, setComments }) => {
 
     api
       .postComment(article_id, loggedInUser.username, newComment)
-      .then(() => {
+      .then(({ data: { newComment } }) => {
+        setAddCommentId(newComment.comment_id);
         setNewComment("");
       })
       .catch(() => {
