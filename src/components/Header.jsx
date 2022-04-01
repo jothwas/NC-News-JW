@@ -20,12 +20,10 @@ const Header = () => {
             <Nav.Link href="/topics/football">football</Nav.Link>
             <Nav.Link href="/topics/cooking">cooking</Nav.Link>
           </Nav>
-          <Nav>
-            <Nav.Link eventKey={2} href="#memes">
-              <AccountCircleSharp className="nav-icon-margin" />
-              {loggedInUser.username}
-            </Nav.Link>
-          </Nav>
+          <Navbar.Text>
+            <AccountCircleSharp className="nav-icon-margin" />
+            {loggedInUser.username}
+          </Navbar.Text>
         </Navbar.Collapse>
       </Container>
     </Navbar>
