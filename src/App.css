@@ -170,19 +170,8 @@
   color: rgb(0, 0, 0);
 }
 
-.article-comments:hover .comment-icon {
-  color: rgb(252, 47, 0);
-  cursor: pointer;
-}
-
-.article-comments:hover {
-  text-decoration: underline;
-  text-underline-offset: 0.2em;
-  text-decoration-thickness: 0.25em;
-  text-decoration-color: rgb(252, 47, 0);
-  color: rgb(252, 47, 0);
-  transform: scale(1.05);
-  cursor: pointer;
+.article-comments {
+  margin-bottom: 0.5em;
 }
 
 .article-topic-header {
